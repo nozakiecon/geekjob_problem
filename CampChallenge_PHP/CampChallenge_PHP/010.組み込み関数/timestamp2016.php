@@ -1,6 +1,10 @@
 <?php
-// 2016年11月4日 10時0分0秒のタイムスタンプを作成し、「年-月-日 時:分:秒」で表示してください。
+// 2015年1月1日 0時0分0秒と2015年12月31日 23時59分59秒の差（総秒）を表示してください。
 // 変数 = mktime(時, 分, 秒, 月, 日, 年);
-$stamp = mktime(10,0,0,11,4,2016);
-$hiduke = date('Y-m-d His', $stamp);
-echo $hiduke;
+$stamp1 = mktime(0,0,0,12,31,2015);
+$time1= strtotime($stamp1);
+$stamp2 = mktime(23,59,59,12,31,2015);
+$time2= strtotime($stamp2);
+$difference=$time1-$time2;
+$difference=24 * 60 * 60;
+echo $difference;
