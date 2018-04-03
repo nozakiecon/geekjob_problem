@@ -17,10 +17,10 @@
   <?php
   //以下の機能を満たすロジックを作成してください。
   //在庫管理システムを作成します。
-  //まず、DBにユーザー情報管理テーブルと、商品情報登録テーブルを作成してください。
+  //まず、DBにユーザー情報管理テーブルと、商品情報登録テーブルを作成してください。ok
   //その上で、下記機能を実現してください。
-  //1. ユーザーのログイン・ログアウト機能
-  //2. 商品情報登録機能(html form)
+  //1. ユーザーのログイン・ログアウト機能ok
+  //2. 商品情報登録機能(html form)ok
   //3. 商品一覧機能
   //※各テーブルの構成は各自の想像で作ってみてください。
   $pid=$_POST['pid'];
@@ -68,11 +68,25 @@ try {
       }
     }
 }
-    if(isset($sid)){
-class register(){
-$sql1 = "INSERT INTO profiles VALUES ($sid,'$sname',$sage,'$stel','$sbirth')";
-  }
 
+function register(){
+      if(isset($sid)){
+$sql5 = "INSERT INTO user VALUES ($sid,'$sname',$sage,'$stel','$sbirth')";
+$pdo_st = $pdo_obj->prepare($sql5);
+$pdo_st->execute();
+$datas = $pdo_st->fetchAll(PDO::FETCH_ASSOC);
+$password = array_column($datas,'password');
+$username = array_column($datas,'username');
+  }
+}
+function list(){
+$sql6 = "SELECT * FROM user";
+$pdo_st = $pdo_obj->prepare($sql5);
+$pdo_st->execute();
+$datas = $pdo_st->fetchAll(PDO::FETCH_ASSOC);
+$password = array_column($datas,'password');
+$username = array_column($datas,'username');
+}
 /* 認証に成功すればここに処理が来る */
     ?>
     </body>
