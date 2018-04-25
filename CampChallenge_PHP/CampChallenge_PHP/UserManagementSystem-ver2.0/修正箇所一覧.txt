@@ -1,0 +1,12 @@
+
+修正箇所一覧
+１．result_detail.phpの移動する際のデータの受け渡しを追加
+２．update_profile()が定義されていなかったので、defineUtil.phpで定義
+３．defineUtil.phpでROOT_URLを'http://localhost/matome/appからhttp://localhost/UserManagementSystem-ver2.0/app/に変更
+４．delete_profile の SQL の文字列を修正。
+５．日付を日本時刻に変更
+６．データベースをhayashiから自分のデータベースに変更
+７．search,deleteページの直リン防止
+８．search_result.phpのトップページへのリンクの設置
+９．delete_result.phpの移動する際のデータの受け渡しを追加
+１０．search.phpのトップページへのリンクの設置
